@@ -1,0 +1,512 @@
+@media only screen and (max-width: 1600px) {
+
+	.userPortfolio .row .col-lg-6:nth-child(odd) .userCard,
+	.userPortfolio .row .col-lg-6:nth-child(even) .userCard {
+		margin: 2.65rem 0 0;
+	}
+
+	.seoProt-card .portCard-img img,
+	.smmProt-card .portCard-img img {
+		height: 270px;
+	}
+
+	.signUp-bg .bg-img {
+		height: 470px;
+	}
+
+	.signUp-img img {
+		height: 344px;
+	}
+
+	.secondForm .signIn-detail>.signIn-form {
+		padding: 0 6rem;
+	}
+
+	.signIn-form {
+		padding: 0 5rem;
+	}
+}
+
+@media only screen and (max-width: 1445px) {
+	html {
+		font-size: 15px;
+	}
+
+	.portCard-img img {
+		height: 180px;
+	}
+
+	.seoProt-card .portCard-img img,
+	.smmProt-card .portCard-img img {
+		height: 240px;
+	}
+
+	.secondForm .signIn-detail>.signIn-form {
+		padding: 0 4.5rem;
+	}
+
+	.webDetails {
+		margin-top: 1rem;
+	}
+}
+
+@media only screen and (max-width: 1366px) {
+	.userCard-btn {
+		margin-top: 0.5rem;
+	}
+
+	.userCard-btn button:first-child {
+		margin-left: 0;
+	}
+
+	.userCard-btn button {
+		margin-left: 0.25rem;
+	}
+
+	.portCard-content a {
+		gap: 0.25rem;
+	}
+
+	.portCard-img img {
+		height: 150px;
+	}
+
+	.signIn-detail .terms {
+		max-width: 400px;
+	}
+
+	.secondForm .signIn-detail>.signIn-form {
+		padding: 0 3rem;
+	}
+
+	.signIn-form {
+		padding: 0 2rem;
+	}
+
+	.seoProt-card .portCard-img img,
+	.smmProt-card .portCard-img img {
+		height: 226px;
+	}
+}
+
+@media (max-width: 1199.98px) {
+	html {
+		font-size: 14px;
+	}
+
+	.portCard-img img {
+		height: 120px;
+	}
+
+	.seoProt-card .portCard-img img,
+	.smmProt-card .portCard-img img {
+		height: 196px;
+	}
+
+	.signIn-detail .googleBtn {
+		padding: 1rem 3rem;
+	}
+
+	:is(.signIn-detail .emailBtn) {
+		padding: 0.938rem 3.5rem;
+	}
+
+	.signIn-detail .terms {
+		max-width: 350px;
+	}
+
+	.signIn-detail .or span {
+		width: 100px;
+	}
+
+	.secondForm .signIn-detail .or span {
+		width: 80px;
+	}
+
+	.signIn-form {
+		padding: 0;
+	}
+
+	.webDetails {
+		gap: 1rem;
+	}
+
+	.modal-dialog {
+		padding: 0 2rem;
+	}	
+}
+
+@media (max-width: 991.98px) {
+	html {
+		font-size: 16px;
+	}
+
+	.header {
+		padding: 1rem;
+	}
+
+	.portCard-img img {
+		height: 180px;
+	}
+
+	.seoProt-card .portCard-img img,
+	.smmProt-card .portCard-img img {
+		height: 338px;
+	}
+
+	.portCard-content a {
+		gap: 0.5rem;
+	}
+
+	.userCard-btn {
+		margin-top: 0;
+	}
+
+	.userCard-btn button {
+		margin-left: 0.5rem;
+	}
+
+	.userPortfolio-btn {
+		bottom: -2%;
+	}
+
+	.userPortfolio-btn button {
+		width: 50px;
+		height: 50px;
+	}
+
+	.signUp-content {
+		position: absolute;
+		top: 2rem;
+		left: 2rem;
+	}
+
+	.signUp-content h4 {
+		font-size: 1.7rem;
+	}
+
+	.signIn-detail .terms {
+		max-width: 300px;
+	}
+
+	.secondForm .signIn-detail>.signIn-form {
+		padding: 0;
+	}
+
+	.secondForm .signIn-detail .or p {
+		white-space: nowrap;
+		padding: 0 0.5rem;
+	}
+
+	.secondForm .signIn-copyright p {
+		margin-bottom: 1rem;
+	}
+
+	.adminPopup .portCard-img img,
+	.postCard-img {
+		height: 400px;
+	}
+	.seoPopup :is(.webBtn, .addBtn) {
+		padding: 0.7rem 0.25rem;
+	}
+	.seoPopup .webDate .webDate-content {
+		padding: 1.25rem;
+	}
+	:is(.totalCard, .webDate-content) {
+		margin-bottom: 1rem !important;
+	}
+	.smmPopup .row .col-lg-6:last-child .totalCard,
+	.webDate-content:last-child {
+		margin-bottom: 0 !important;
+	}
+	.smmPopup .webDate .webDate-content {		
+		width: 100%;
+		text-align: center;
+	}
+}
+
+@media (max-width: 767.98px) {
+	.header {
+		padding: 1rem 0;
+	}
+
+	.header-main {
+		display: none;
+	}
+
+	.responsiveHeader-main.d-none {
+		display: flex !important;
+	}
+
+	.header-main__nav {
+		justify-content: center;
+		margin: 2rem 0;
+	}
+
+	.createUser {
+		gap: 0.35rem;
+	}
+
+	.portCard-img img {
+		height: 250px;
+	}
+
+	.seoProt-card .portCard-img img,
+	.smmProt-card .portCard-img img {
+		height: 256px;
+	}
+
+	.addWebsite-form {
+		max-width: 500px;
+	}
+
+	.addWebsite-btn {
+		padding: 1.25rem;
+	}
+
+	.signUp-content h4 {
+		font-size: 1.8rem;
+		margin-bottom: 1.5rem;
+		padding-right: 1rem;
+	}
+
+	.signIn-detail h4 {
+		margin: 0 0 2.5rem;
+	}
+
+	.signIn-detail .googleBtn {
+		padding: 0.85rem 2rem;
+		white-space: nowrap;
+	}
+
+	.signIn-detail .emailBtn {
+		padding: 0.8rem 3rem;
+		margin-bottom: 2rem;
+		white-space: nowrap;
+	}
+
+	.signIn-detail .or {
+		margin: 1rem 0;
+	}
+
+	.signIn-detail .or span {
+		width: 100px;
+	}
+
+	.secondForm .signIn-detail .or span {
+		width: 36px;
+	}
+
+	.webDetails {
+		display: block !important;
+	}
+
+	.webDate {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 1rem;
+		margin-top: 1rem;
+	}
+	.smmPopup .webDate .webDate-content,
+	.webDate-content {
+		margin-bottom: 0 !important;
+	}
+	.seoPopup .webDate {
+		flex-wrap: unset !important;
+	}
+	.seoPopup .webDate .webDate-content{
+		width: 50%;
+		margin-bottom: 1rem;
+		text-align: center;
+	}
+	.seoPopup .portCard-img img {
+		height: 250px;
+	}
+	.keywordPopup .modal-body {
+		padding: 2rem;
+	}
+	.smmPopup .row .col-lg-6:last-child .totalCard {
+		margin-bottom: 1rem !important;
+	}
+	.smmPopup .webDate {
+		flex-wrap: unset !important;
+	}
+	.smmPopup .webDate .webDate-content{
+		width: 48%;
+	}
+}
+
+@media (max-width: 575.98px) {
+	.container {
+		max-width: 100%;
+	}
+
+	.portCard-img img {
+		height: 400px;
+	}
+
+	.seoProt-card .portCard-img img,
+	.smmProt-card .portCard-img img {
+		height: 410px;
+	}
+
+	.addWebsite-form {
+		max-width: 100%;
+	}
+
+	.addWebsite-form input,
+	.addWebsite-btn {
+		padding: 1rem;
+	}
+
+	.signUp-img img {
+		height: 200px;
+	}
+
+	.signUp-bg .bg-img {
+		height: 450px;
+	}
+
+	.signIn-olive {
+		display: block !important;
+		margin-top: 1.5rem;
+	}
+
+	.secondForm .signIn-detail .or span {
+		width: 100px;
+	}
+
+	.signIn-copyright {
+		position: unset;
+		text-align: center;
+		margin-top: 1rem;
+	}
+
+	.modal-body {
+		padding: 1.5rem;
+	}
+
+	.modal-dialog {
+		padding: 2rem;
+	}
+	.keywordPopup .modal-dialog {
+		padding: 1rem;
+	}
+
+	.signIn-copyright p {
+		margin-bottom: 0 !important;
+	}
+
+	.adminPopup .portCard-img img,
+	.postCard-img {
+		height: 250px;
+	}
+
+	:is(.webBtn, .addBtn) {
+		padding: 0.7rem 0;
+	}
+
+	.webDate-content {
+		width: 100%;
+		text-align: center;
+	}
+	.addUser .modal-body {
+		padding: 3rem 2rem;
+	}
+	.seoPopup .webDate .webDate-content {
+		padding: 1rem;
+	}
+	.seoPopup .portCard-img img {
+		height: 180px;
+	}
+	.keywordPopup .modal-body {
+		padding: 2rem 1.5rem;
+	}
+	.keyword-content {		
+		padding: 1rem;
+		margin-top: 1rem;
+	}	
+	.smmPopup .portCard-img,
+	.smmPopup .postCard-img {
+		height: 280px;
+	}	
+	.smmPopup .webDate {
+		display: block !important;
+	}
+	.smmPopup .webDate .webDate-content{
+		width: 100%;
+		margin-top: 1rem;
+	}
+}
+
+@media (max-width: 400.98px) {
+	.addWebsite-form {
+		box-shadow: unset;
+		margin-bottom: -5.5rem;
+	}
+	.keywordPopup .addWebsite-form {
+		box-shadow: 0px 2px 20px #e5e5e5;
+	}
+	.addWebsite-form,
+	.seoPopup .webDate {
+		display: block !important;
+	}
+	.seoPopup .webDate .webDate-content,
+	.addWebsite-btn {
+		width: 100%;
+	}
+
+	.portCard-img img {
+		height: 250px;
+	}
+
+	.seoProt-card .portCard-img img,
+	.smmProt-card .portCard-img img {
+		height: 277px;
+	}
+
+	.signUp-content h4,
+	.signIn-detail h4 {
+		font-size: 1.5rem;
+
+	}
+
+	.signUp-content .signupBtn {
+		padding: 0.7rem 2rem;
+	}
+
+	.signIn-detail .googleBtn span {
+		padding-right: 0.25rem;
+	}
+
+	.signIn-detail .googleBtn {
+		padding: 0.85rem 1rem;
+	}
+
+	.signIn-detail .emailBtn {
+		padding: 0.8rem 1.5rem;
+	}
+
+	.adminPopup .portCard-img img,
+	.postCard-img {
+		height: 190px;
+	}
+
+	.webBtn span {
+		display: none;
+	}
+
+	:is(.webBtn, .addBtn) {
+		padding: 0.7rem 0.25rem;
+		font-size: 0.9rem !important;
+		word-wrap: break-word;
+	}
+
+	.modal-dialog {
+		padding: 2rem 1rem;
+	}
+	.smmPopup .portCard-img, .smmPopup .postCard-img {
+		height: 200px;
+	}
+}

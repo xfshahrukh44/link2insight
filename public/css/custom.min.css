@@ -1,0 +1,947 @@
+/* Imports */
+/* Icons */
+@import url("https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css");
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+	--white: #FFFFFF;
+	--black: #0D0C21;
+	--body-color: #FDFEF8;
+	--primary: #C1E648;
+	--secondary: #F8F6D1;
+}
+
+::selection {
+	background-color: var(--primary);
+	color: var(--white);
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+	scrollbar-width: auto;
+	scrollbar-color: var(--primary) var(--body-color);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+	width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+	background: var(--body-color);
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: var(--primary);
+	border-radius: 1rem;
+	border: 4px solid var(--white);
+}
+
+/* General Styling */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	text-decoration: none !important;
+	list-style-type: none;
+	font-family: "Poppins", sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	overflow-x: hidden;
+	background-color: var(--body-color);
+}
+
+.container {
+	max-width: 97%;
+}
+
+section {
+	position: relative;
+}
+
+.img-auto {
+	display: block;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.imgFluid {
+	max-width: 100%;
+	height: auto;
+}
+
+a,
+button {
+	text-decoration: none !important;
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+button {
+	border: none;
+	outline: none !important;
+	background-color: transparent;
+}
+
+a:hover,
+button:hover {
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+ul,
+ol,
+dl,
+address,
+label,
+figure {
+	margin-bottom: 0;
+}
+
+.object-fit {
+	object-fit: cover;
+}
+
+:is(.createUser li a, .addWebsite-form input, .addWebsite-btn, .portfolioHeader select, .portfolioHeader .filterBtn, .portCard-content a h5, .footer p, .webBtn, .addBtn, .webRank-content ul li span:last-child, .webDate-content h5, .inputField label, .inputField input, .inputField-btn button, .signUp-content .signupBtn, .signIn-detail .already, .signIn-form .already) {
+	font-size: 1rem;
+}
+
+:is(.createUser li a, .addWebsite-form input, .addWebsite-btn, .totalCard-content h4, .postCard-content h5, .inputField label, .inputField input, .inputField-btn button, .signIn-detail .or p, .keywordBtn button) {
+	font-weight: 500;
+}
+
+:is(.createUser li a, .header-main__nav form input, .notificationBtn, .addWebsite-form input, .addWebsite-btn, .portfolioHeader select, .portfolioHeader .filterBtn, .portCard-btn button, .portCard-content a h5, .userCard-btn button, .userCard-content h5, .userPortfolio-btn button, .footer p, .signIn-copyright p, .totalCard-content h4, .postCard-content h5, .webBtn, .addBtn, .inputField label, .inputField input, 
+.signUp-content h4, .signUp-content .signupBtn, .signIn-detail h4, .keywordBtn button) {
+	color: var(--black);
+}
+
+:is(.createUser li a, .portCard-content a h5, .userPortfolio h4, .userCard-content h5, .userCard-content p, .addBtn, .userForm h4, .inputField label) {
+	text-transform: capitalize;
+}
+
+:is(.portfolio h4) {
+	text-transform: uppercase;
+}
+
+:is(.header-main__nav, .header-main__nav form, .addWebsite-form, .notificationBtn, .portfolioHeader, .portCard-content a, .portCard-content a img, .userCard-img, .portCard-content, .totalCard-flex, .postCard-content, .webRank-content ul li, .signIn-detail .or, .signUp-sec,
+	.secondForm .password label, .webDetails, .seoPopup .webDate, .smmPopup .webDate, .signIn-olive, .keywordBtn) {
+	display: flex;
+	align-items: center;
+}
+
+:is(.notificationBtn, .userProfile, .userCard-img img, .userCard-btn button, .userPortfolio-btn button) {
+	border-radius: 50%;
+}
+
+:is(.header--none, .footer--none) {
+	display: none;
+}
+
+/* Header */
+.header,
+.responsiveHeader {
+	padding: 1rem 2rem;
+	background-color: #fcffff;
+}
+
+.header-main {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	align-items: center;
+}
+
+.header-main__logo {
+	width: 90px;
+	margin: 0 auto;
+	display: block;
+}
+
+.header-main__nav {
+	justify-content: end;
+	gap: 1rem;
+	position: relative;
+	--size-button: 40px;
+}
+
+.header-main__nav form {
+	position: relative;
+	max-width: 300px;
+}
+
+.header-main__nav form input {
+	width: 100%;
+	border-radius: 1.5rem;
+	padding: 0.6rem 1rem 0.6rem 2.5rem;
+	border: 2px solid transparent;
+	outline: none;
+	background-color: #F4F5FB;
+	transition: .3s ease;
+}
+
+.header-main__nav form input:focus,
+.header-main__nav form input:hover {
+	outline: none;
+	border-color: var(--primary);
+	background-color: #fff;
+}
+
+.header-main__nav form button {
+	color: #6E6D7A;
+	position: absolute;
+	left: 1rem;
+}
+
+.notificationBtn {
+	width: 45px;
+	height: 45px;
+	position: relative;
+	justify-content: center;
+	background-color: #F4F5FB;
+	cursor: pointer;
+	transition-duration: .3s;
+}
+
+.notificationBtn:hover {
+	background-color: var(--primary);
+	color: var(--body-color);
+}
+
+.notificationBtn:hover .bell {
+	animation: bellRing 0.9s both;
+}
+
+@keyframes bellRing {
+
+	0%,
+	100% {
+		transform-origin: top;
+	}
+
+	15% {
+		transform: rotateZ(10deg);
+	}
+
+	30% {
+		transform: rotateZ(-10deg);
+	}
+
+	45% {
+		transform: rotateZ(5deg);
+	}
+
+	60% {
+		transform: rotateZ(-5deg);
+	}
+
+	75% {
+		transform: rotateZ(2deg);
+	}
+}
+
+.notificationBtn:active {
+	transform: scale(0.8);
+}
+
+.userProfile {
+	width: 45px;
+	height: 45px;
+	overflow: hidden;
+}
+
+.responsiveHeader-main .navbar-toggler {	
+	color: var(--black);
+	opacity: 1;
+	background-color: #F4F5FB;
+	border: 1px solid transparent;
+}
+
+/* addWebsite */
+.addWebsite {
+	background-color: #f6fad1;
+	padding: 3rem 0 2rem;
+}
+
+.addWebsite-form {
+	max-width: 650px;
+	justify-content: center;
+	margin: 0 auto -5rem;
+	box-shadow: 0px 2px 20px #e5e5e5;
+	border-radius: 0.5rem;
+	overflow: hidden;
+}
+
+.addWebsite-form input {
+	display: block;
+	width: 100%;
+	padding: 1.25rem 1rem;
+	border: none;
+	outline: none !important;
+}
+
+.addWebsite-btn {
+	background-color: var(--primary);
+	padding: 1.25rem 1.5rem;
+	white-space: nowrap;
+	filter: drop-shadow(2px 4px 6px #C1E648);
+}
+
+.addWebsite-btn span,
+.portfolioHeader .filterBtn span {
+	margin-right: 0.25rem;
+}
+
+/* portfolioSec */
+.portfolioSec {
+	margin: 6rem 0 4rem;
+}
+
+:is(.portfolioHeader, .portCard-content, .totalCard-flex, .postCard-content, .webRank-content ul li, .secondForm .password label,
+	.userCard-img, .webDetails, .seoPopup .webDate, .smmPopup .webDate) {
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.portfolioHeader select {
+	border: 1px solid #E9E9EB;
+	border-radius: 0.5rem;
+	outline: none !important;
+	padding: 0.5rem 1rem;
+	background: var(--body-color);
+}
+
+.portfolioHeader .filterBtn {
+	background-color: var(--body-color);
+	padding: 0.5rem 1.5rem;
+	border: 1px solid #E9E9EB;
+	border-radius: 1.25rem;
+}
+
+.portfolio {
+	margin-top: 3rem;
+}
+
+.portfolio h4 {
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+.portCard {
+	margin: 1.125rem 0 0;
+}
+
+.portCard-img img {
+	border-radius: 0.5rem;
+	height: 200px;
+}
+.seoProt-card .portCard-img img,
+.smmProt-card .portCard-img img {
+    height: 324px;
+}
+
+.portCard-content a {
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.portCard-content a img {
+	width: 26px;
+	height: 26px;
+}
+
+.portCard-content a h5,
+.totalCard-content p,
+.postCard-content :is(p, h5),
+.webRank-content ul li:last-child,
+.webDate-content h4 {
+	margin: 0;
+}
+
+.portCard-btn {
+	margin-top: 0.75rem;
+}
+
+.portCard-btn button {
+	margin-right: 0.5rem;
+}
+
+.portCard-btn button:last-child {
+	margin-right: 0;
+}
+
+.portCard-btn button span {
+	color: #9E9EA7;
+}
+
+.userPortfolio {
+	border: 1px solid #707070;
+	border-radius: 1rem;
+	background: linear-gradient(to right, #f4f5fb5e 100%, var(--white) 0%);
+	margin-top: 3rem;
+	padding: 2.5rem 2rem;
+	position: relative;
+}
+
+.userPortfolio .row .col-lg-6:nth-child(odd) .userCard {
+	margin-right: 2rem;
+}
+.userPortfolio .row .col-lg-6:nth-child(even) .userCard {
+	margin-left: 2rem;
+}
+
+.userPortfolio h4 {
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+.userCard {
+	margin: 2.65rem 0 0;
+}
+
+.userCard-img {
+	flex-wrap: wrap;
+	margin-bottom: 1rem;
+}
+
+.userCard-img img {
+	width: 60px;
+	height: 60px;
+}
+
+.userCard-btn button {
+	width: 36px;
+	height: 36px;
+	background-color: var(--primary);
+	margin-left: 0.5rem;
+}
+
+.userCard-btn button:last-child {
+	background-color: #F73D3D;
+	color: var(--white);
+}
+
+.userCard-content h5 {
+	font-size: 1.125rem;
+	font-weight: 600;
+	margin-bottom: 0.45rem;
+}
+
+.userCard-content p {
+	font-size: 1rem;
+	font-weight: 400;
+	color: #6A6A6A;
+	margin-bottom: 0;
+}
+
+.userPortfolio-btn {
+	position: absolute;
+	bottom: -2.5%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.userPortfolio-btn button {
+	width: 60px;
+	height: 60px;
+	font-size: 1.5rem;
+	background-color: var(--primary);
+}
+
+/* footer */
+.footer p,
+.signIn-copyright p {
+	margin-bottom: 1.75rem;
+}
+
+/* Popup */
+.modal-backdrop {
+	background-color: var(--white);
+}
+
+.modal-backdrop.show {
+	opacity: 75%;
+}
+
+.modal {
+	backdrop-filter: blur(6px);
+	padding: 0 !important;
+}
+
+.modal-open .modal::-webkit-scrollbar{
+	width: 0;
+}
+
+.adminPopup .modal-dialog {
+	max-width: 1200px;
+}
+
+.seoPopup .modal-dialog {
+	max-width: 800px;
+}
+
+.seoPopup .portCard-img img {
+    height: 318px;
+}
+
+.smmPopup .modal-dialog {
+	max-width: 1100px;
+}
+
+.addUser .modal-dialog {
+	max-width: 540px;
+}
+
+.keywordPopup .modal-dialog {
+	max-width: 1050px;
+}
+
+.modal-content {
+	border-radius: 1.875rem;
+	border: none;
+	background-color: var(--white);
+	filter: drop-shadow(0px 16px 250px rgb(0 0 0 / 11%));
+}
+
+.modal-body {
+	padding: 2rem;
+}
+
+.addUser .modal-body {
+	padding: 3rem 3.5rem;
+}
+
+.keywordPopup .modal-body {
+	padding: 3rem;
+}
+
+:is(.totalCard, .webRank-content, .webDate-content) {
+	background-color: #FBFBFB;
+	border-radius: 0.5rem;
+	padding: 2rem 1.25rem;
+	margin-bottom: 1.125rem;
+}
+
+:is(.totalCard h5, .webRank-content h5) {
+	font-size: 1.125rem;
+	margin-bottom: 1rem;
+}
+
+.totalCard-content h4 {
+	font-size: 2rem;
+}
+
+:is(.totalCard-content p, .webRank-content ul li span:first-child) {
+	font-size: 0.875rem;
+	color: #6C6A75;
+}
+
+.totalCard-content p span {
+	font-size: 0.875rem;
+	color: #4BB622;
+}
+
+.adminPopup .portCard-img img{
+	height: 342px;
+}
+
+.postCard {
+	background-color: #FBFBFB;
+	border-radius: 0.5rem;
+	padding: 0.75rem;
+}
+
+.postCard-img {
+	height: 309px;
+	border-radius: 0.5rem;
+	overflow: hidden;
+}
+
+.postCard-content {
+	margin-top: 1.25rem;
+}
+
+.postCard-content p {
+	font-size: 0.85rem;
+	color: #898989;
+}
+
+.postCard-content h5 {
+	font-size: 1.25rem;
+}
+
+.webDetails {justify-content: start !important;gap: 1.25rem;}
+
+:is(.webBtn, .addBtn) {
+	background-color: var(--primary);
+	border-radius: 0.5rem;
+	padding: 0.7rem 2.25rem;
+	display: block;
+	width: 100%;
+	text-transform: lowercase;
+	text-align: center;
+}
+
+:is(.webBtn, .addBtn):hover {
+	color: var(--black);
+}
+
+.addBtn {
+	background-color: var(--white);
+	border: 1px solid #000000;
+	margin-top: 1rem;
+}
+
+:is(.webBtn span, .addBtn span) {
+	margin-right: 0.5rem;
+}
+
+.webRank-content {
+	margin: 1.25rem 0 0;
+	padding: 1.75rem 1.5rem;
+}
+
+.webRank-content ul li {
+	margin: 0 0 0.7rem;
+}
+
+.webRank-content ul li span {
+	color: var(--black) !important;
+}
+
+.webRank-content ul li span:last-child {
+	font-weight: 600;
+}
+
+.webDate-content {
+	margin-bottom: 0.8rem;
+	padding: 1.5rem 1.8rem;
+}
+
+.webDate-content h5 {
+	margin-bottom: 2.5rem;
+}
+
+.webDate-content h4 {
+	font-size: 3.125rem;
+	text-align: center;
+	line-height: 1;
+}
+
+.webDate-content h4 span {
+	font-size: 0.875rem;
+}
+
+:is(.seoPopup .webDate, .smmPopup .webDate) {
+	margin-top: 1.8rem;
+}
+
+.seoPopup .webDate .webDate-content {
+	margin-bottom: 0;
+	padding: 2rem;
+}
+
+.smmPopup .portCard-img {
+	height: 310px;
+}
+
+.smmPopup .postCard-img {
+	height: 278px;
+}
+
+.smmPopup .webDate .webDate-content {
+	padding: 1.55rem;
+}
+
+.smmPopup .webDate .webDate-content h5 {
+	margin-bottom: 1.8rem;
+}
+
+.smmPopup .webDate .webDate-content h4 {
+	font-size: 3.5rem;
+}
+
+.userForm h4 {
+	font-size: 1.625rem;
+	font-weight: 600;
+	margin-bottom: 2rem;
+}
+
+/* inputField */
+.inputField label {
+	margin-bottom: 0.25rem;
+}
+
+:is(.inputField input, .inputField-btn button) {
+	display: block;
+	width: 100%;	
+	padding: 0.938rem;
+	border: 1px solid #E7E7E9;
+	border-radius: 0.875rem;
+	margin-bottom: 2rem;
+	background-color: var(--white);
+}
+
+.inputField-btn button {
+	border-radius: 1.75rem;
+	background-color: #0D0C22;
+	color: var(--white);
+	border: none;
+	padding: 1rem;
+	margin: 0.25rem 0 0;
+}
+
+/* signUp-sec */
+.signUp-sec {
+	min-height: 100vh;
+}
+
+.signUp-main {
+	border-radius: 2.25rem;
+	overflow: hidden;
+	margin: 0.9375rem 0;
+}
+
+:is(.signUp-bg, .signUp-img img, .signIn-olive) {
+	position: relative;
+}
+
+.signUp-bg .bg-img {
+	height: 530px;	
+}
+
+.signUp-img img {
+	height: 368px;
+	object-position: top;
+}
+
+.signUp-content {
+	position: absolute;
+	top: 3rem;
+	left: 3rem;
+}
+
+.signUp-logo img {
+	width: 86px;
+	margin-bottom: 2.5rem;
+}
+
+.signUp-content h4 {
+	font-size: 2.25rem;
+	font-weight: 300;
+	max-width: 480px;
+	line-height: 1.4;
+	margin-bottom: 2.5rem;
+}
+
+.signUp-content .signupBtn {
+	border: 1px solid var(--black);
+	border-radius: 1.5rem;
+	display: block;
+	width: fit-content;
+	padding: 0.75rem 2.125rem;
+}
+
+.signUp-sec::before {
+	content: "";
+	width: 534px;
+	height: 221px;
+	background: url("../images/signup-before.webp") no-repeat, center/cover;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.signIn-olive {
+	height: 100%;
+	justify-content: center;
+}
+
+
+.signIn-detail h4 {
+	font-size: 1.625rem;
+	font-weight: 600;	
+	margin: 0 0 2.8rem;
+}
+
+.signIn-detail .or {
+	justify-content: center;
+	margin: 1.5rem 0;
+}
+
+.signIn-detail .or span {
+	width: 180px;
+	height: 1px;
+	background-color: #E7E7E9;
+}
+
+.secondForm .signIn-detail .or span {
+	width: 118px;
+}
+
+.signIn-detail .or p {
+	padding: 0 1rem;
+	color: #757480;	
+	margin: unset;
+}
+
+:is(.signIn-detail .googleBtn, .signIn-detail .emailBtn) {
+	color: var(--white);
+	background-color: var(--black);
+	border-radius: 1.75rem;
+	padding: 1rem 6.8rem;
+	display: block;
+	width: fit-content;
+	margin: 0 auto;
+}
+
+.signIn-detail .googleBtn span {
+	padding-right: 0.7rem;
+}
+
+:is(.signIn-detail .emailBtn, .secondForm .googleBtn) {
+	background-color: transparent;
+	color: var(--black);
+	border: 1px solid #E7E7E9;
+	padding: 0.938rem 7.5rem;
+	margin-bottom: 4rem;
+}
+
+.signIn-detail .terms {
+	color: #5E5E6C;
+	max-width: 500px;
+	display: block;
+	margin: 0 auto 1.25rem;
+	font-size: 0.8rem;
+}
+
+:is(.signIn-detail p a, .signIn-form p a, .secondForm .password label span a) {
+	color: #5E5E6C;
+	text-decoration: underline !important;
+}
+
+:is(.signIn-detail .already, .signIn-form .already) {
+	font-weight: 400;
+	color: #5E5E6C;
+	margin-bottom: 0;
+}
+
+.signIn-copyright {
+	position: absolute;
+	bottom: 0;
+}
+
+.signIn-form {
+	padding: 0 8rem;
+}
+
+.signIn-form .inputField.checkBox {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.5rem;
+}
+
+.signIn-form .inputField input {
+	background-color: var(--body-color);
+}
+
+.signIn-form .inputField input[type=checkbox] {
+	width: fit-content;
+	margin-bottom: 0;
+	accent-color: var(--primary);
+	cursor: pointer;
+	width: 20px;
+	height: 18px;
+	outline: none !important;
+}
+
+.signIn-form .inputField .terms {
+	line-height: 14px;
+	margin: 0 0 2rem;
+	max-width: 400px;
+}
+
+.signIn-form .terms {
+	color: #5E5E6C;
+	font-size: 0.8rem;
+	max-width: 375px;
+	margin: 0 auto;
+}
+
+.signIn-form .already {
+	margin-bottom: 1.5rem;
+}
+
+.signIn-olive .signIn-form {
+	display: none;
+}
+
+.secondForm .signIn-detail>.signIn-form {
+	display: block;
+	padding: 0 10rem;
+}
+
+:is(.signIn-olive.active .signIn-form, .signIn-olive .signIn-detail) {
+	display: block;
+	animation: fadeIn 1s;
+	opacity: 1;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.signIn-olive.active .signIn-detail {
+	display: none;
+}
+
+.keyword h4 {
+	font-size: 2rem;
+	margin-bottom: 2rem;
+}
+
+.keyword-content {
+	border-radius: 0.5rem;
+	background-color: #FBFBFB;
+	padding: 2rem 1.5rem;
+	margin-top: 3rem;
+}
+
+.keyword-content h5 {
+	font-size: 1.125rem;
+	margin-bottom: 1.5rem;
+}
+
+.keywordBtn {
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.keywordBtn button {
+	font-size: 0.8125rem;
+	border-radius: 0.25rem;
+	background-color: #EEEEEE;
+	padding: 0.15rem 0.4rem;
+}
+
+.keywordBtn button:hover,
+.keywordBtn button:active {
+	color: var(--white);
+	background-color: #E10000;
+}
+
+.secondForm .password label span a {
+	font-size: 0.85rem;
+}

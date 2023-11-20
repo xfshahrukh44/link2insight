@@ -1,0 +1,12 @@
+{
+    "apps": [
+        {
+            "name": "link2insight | FB Scraper",
+            "script": "node scraper.js",
+            "instances": "1",
+            "autorestart": true,
+            "max_restarts": 100,
+            "time": true
+        }
+    ]
+}
