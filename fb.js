@@ -2,7 +2,7 @@ import puppeteer from 'puppeteer';
 
 export const getInfo = async (urls) => {
     // Launch the browser and open a new blank page
-    const browser = await puppeteer.launch({ headless: "new", executablePath: '/home/servicedemoweb/public_html/chromium/chrome-linux/chrome' });
+    const browser = await puppeteer.launch({ headless: "new" });
     const page = await browser.newPage();
 
     //minimize window
