@@ -6,7 +6,7 @@ export const getInfo = async (urls) => {
     const browser = await puppeteer.launch({
         headless: false,
         args: ["--no-sandbox"],
-        executablePath: '/home/servicedemoweb//.cache/puppeteer/chrome/linux-119.0.6045.105/chrome-linux64/'
+        executablePath: '/home/servicedemoweb/.cache/puppeteer/chrome/linux-119.0.6045.105/chrome-linux64/'
     });
     const page = await browser.newPage();
 
