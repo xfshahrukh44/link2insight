@@ -1,5 +1,10 @@
 import puppeteer from 'puppeteer';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 import path from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export const getInfo = async (urls) => {
     // Launch the browser and open a new blank page
