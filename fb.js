@@ -1,5 +1,5 @@
 import puppeteer from 'puppeteer';
-const path = require('path');
+import path from 'path';
 
 export const getInfo = async (urls) => {
     // Launch the browser and open a new blank page
