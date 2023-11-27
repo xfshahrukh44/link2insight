@@ -11,7 +11,8 @@ export const getInfo = async (urls) => {
     const browser = await puppeteer.launch({
         headless: "new",
         // executablePath: path.join(__dirname, '/../../', '/home/servicedemoweb/.cache/puppeteer/chrome/linux-119.0.6045.105/chrome-linux64/')
-        executablePath: path.join(__dirname, '../..', '/.cache/puppeteer/chrome/linux-119.0.6045.105/chrome-linux64'),
+        // executablePath: path.join(__dirname, '../..', '/.cache/puppeteer/chrome/linux-119.0.6045.105/chrome-linux64'),
+        executablePath: '.cache/puppeteer/chrome/linux-119.0.6045.105/chrome-linux64',
         args: [ "--no-sandbox", "--disable-setuid-sandbox" ]
     });
     // const browser = await puppeteer.launch({
@@ -128,28 +129,28 @@ function timeout(ms) {
 }
 
 // await getInfo([
-//     'https://www.facebook.com/AcdcDanmark',
-//     'https://www.facebook.com/acdc',
-//     'https://www.facebook.com/ACDCgaleon',
-//     'https://www.facebook.com/thunderstruckus',
-//     'https://www.facebook.com/acdcxmas',
-//     'https://www.facebook.com/acdcscotland',
-//     'https://www.facebook.com/ACDCARMY',
-//     'https://www.facebook.com/acdctraining',
-//     'https://www.facebook.com/ACDC.Brasil',
-//     'https://www.facebook.com/acdcworldwide',
-//     'https://www.facebook.com/ACDCFamily',
-//     'https://www.facebook.com/GalaxyACDC',
-//     'https://www.facebook.com/theACDCexperience',
-//     'https://www.facebook.com/ACDCElectricpvtltd',
-//     'https://www.facebook.com/LivewireACDCshow',
-//     'https://www.facebook.com/acdcitaliacom',
-//     'https://www.facebook.com/acdcmx',
-//     'https://www.facebook.com/nyasabigbulletsfc',
-//     'https://www.facebook.com/fcbmasia',
-//     'https://www.facebook.com/fcbsports324',
-//     'https://www.facebook.com/VISCA.FCB.1899',
-//     'https://www.facebook.com/we.love.FCB',
-//     'https://www.facebook.com/FANDELFCB10',
-//     'https://www.facebook.com/BarceloneFCB2015'
+//     "https://www.facebook.com/AcdcDanmark",
+//     "https://www.facebook.com/acdc",
+//     "https://www.facebook.com/ACDCgaleon",
+//     "https://www.facebook.com/thunderstruckus",
+//     "https://www.facebook.com/acdcxmas",
+//     "https://www.facebook.com/acdcscotland",
+//     "https://www.facebook.com/ACDCARMY",
+//     "https://www.facebook.com/acdctraining",
+//     "https://www.facebook.com/ACDC.Brasil",
+//     "https://www.facebook.com/acdcworldwide",
+//     "https://www.facebook.com/ACDCFamily",
+//     "https://www.facebook.com/GalaxyACDC",
+//     "https://www.facebook.com/theACDCexperience",
+//     "https://www.facebook.com/ACDCElectricpvtltd",
+//     "https://www.facebook.com/LivewireACDCshow",
+//     "https://www.facebook.com/acdcitaliacom",
+//     "https://www.facebook.com/acdcmx",
+//     "https://www.facebook.com/nyasabigbulletsfc",
+//     "https://www.facebook.com/fcbmasia",
+//     "https://www.facebook.com/fcbsports324",
+//     "https://www.facebook.com/VISCA.FCB.1899",
+//     "https://www.facebook.com/we.love.FCB",
+//     "https://www.facebook.com/FANDELFCB10",
+//     "https://www.facebook.com/BarceloneFCB2015",
 // ]);
