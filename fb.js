@@ -12,7 +12,7 @@ export const getInfo = async (urls) => {
         headless: "new",
         // executablePath: path.join(__dirname, '/../../', '/home/servicedemoweb/.cache/puppeteer/chrome/linux-119.0.6045.105/chrome-linux64/')
         // executablePath: path.join(__dirname, '../..', '/.cache/puppeteer/chrome/linux-119.0.6045.105/chrome-linux64'),
-        executablePath: '/puppeteer/chrome/linux-119.0.6045.105/chrome-linux64',
+        executablePath: '~/puppeteer/chrome/linux-119.0.6045.105/chrome-linux64',
         args: [ "--no-sandbox", "--disable-setuid-sandbox" ]
     });
     // const browser = await puppeteer.launch({
