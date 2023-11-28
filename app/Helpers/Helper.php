@@ -17,8 +17,8 @@ function get_page_info ($urls) {
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'POST',
             CURLOPT_POSTFIELDS =>'{
-  "urls": ["https://example.com", "https://example.org"]
-}',
+              "urls": '.json_encode($urls).'
+            }',
             CURLOPT_HTTPHEADER => array(
                 'lang: 3',
                 'Content-Type: application/json',
