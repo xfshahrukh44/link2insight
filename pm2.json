@@ -2,7 +2,7 @@
     "apps": [
         {
             "name": "link2insight | FB Scraper",
-            "script": "node --timeout 60000 scraper.js",
+            "script": "node scraper.js",
             "instances": "1",
             "autorestart": true,
             "max_restarts": 100,
