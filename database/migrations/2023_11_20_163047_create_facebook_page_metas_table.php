@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('facebook_page_metas', function (Blueprint $table) {
             $table->id();
-            $table->foreign('facebook_page_id')->references('id')->on('facebook_pages');
+            $table->integer('facebook_page_id');
             $table->string('key');
             $table->string('value');
             $table->timestamps();
