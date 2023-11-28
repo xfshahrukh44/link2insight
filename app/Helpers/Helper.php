@@ -58,7 +58,7 @@ function store_fetched_page_info ($data) {
         }
 
         foreach ($page as $key => $value) {
-            if ($value == "") {
+            if ($key == "url" || $value == "") {
                 continue;
             }
 
