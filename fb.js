@@ -31,7 +31,7 @@ export const getInfo = async (urls) => {
 
     for (const url of urls) {
         await page.goto(url);
-        // await timeout(400);
+        await timeout(400);
 
         results.push({
             url,
