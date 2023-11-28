@@ -9,7 +9,7 @@ const __dirname = dirname(__filename);
 export const getInfo = async (urls) => {
     // Launch the browser and open a new blank page
     const browser = await puppeteer.launch({
-        headless: true,
+        headless: "new",
         executablePath: path.join(__dirname, '../..', '/.cache/puppeteer/chrome/linux-119.0.6045.105/chrome-linux64/chrome'),
         // executablePath: path.join(__dirname, '/puppeteer/chrome'),
         // executablePath: '/puppeteer',
