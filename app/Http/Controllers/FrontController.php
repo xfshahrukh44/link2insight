@@ -25,7 +25,9 @@ class FrontController extends Controller
 
     public function addFacebookPage (Request $request)
     {
-        $facebook_page = FacebookPage::create([ 'url' => $request->url ]);
+        if (!$facebook_page = FacebookPage::where('url', $request->url)->first()) {
+            $facebook_page = FacebookPage::create([ 'url' => $request->url ]);
+        }
 
         $response = get_page_info([$facebook_page->url]);
 
