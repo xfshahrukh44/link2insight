@@ -36,5 +36,3 @@ const PORT = 3044;
 app.listen(PORT, () => {
     console.log(`Server is running on port: ${PORT}`);
 });
-
-app.timeout = 60000;
