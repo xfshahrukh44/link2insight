@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FacebookPage;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -9,7 +10,28 @@ class FrontController extends Controller
 {
     public function facebookPages (Request $request)
     {
-        return view('front.facebook');
+        $facebook_pages = FacebookPage::all()->map(function ($item) {
+            $item->name = $item->latest_meta_value_where_key('name');
+            $item->image = $item->latest_meta_value_where_key('image');
+            $item->followers = $item->latest_meta_value_where_key('followers');
+            $item->likes = $item->latest_meta_value_where_key('likes');
+            $item->last_post_at = $item->latest_meta_value_where_key('last_post_at');
+
+            return $item;
+        });
+
+        return view('front.facebook', compact('facebook_pages'));
+    }
+
+    public function addFacebookPage (Request $request)
+    {
+        $facebook_page = FacebookPage::create([ 'url' => $request->url ]);
+
+        $response = get_page_info([$facebook_page->url]);
+
+        store_fetched_page_info($response);
+
+        return redirect()->route('facebookPages');
     }
 
     public function createUser (Request $request) {

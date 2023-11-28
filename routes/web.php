@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [FrontController::class, 'facebookPages']);
+Route::get('/', [FrontController::class, 'facebookPages'])->name('facebookPages');
+
+Route::post('/add-facebook-page', [FrontController::class, 'addFacebookPage'])->name('addFacebookPage');
 
 Auth::routes();
 

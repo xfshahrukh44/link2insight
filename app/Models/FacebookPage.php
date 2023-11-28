@@ -20,6 +20,6 @@ class FacebookPage extends Model
 
     public function latest_meta_value_where_key ($key)
     {
-        return $this->hasMany(FacebookPageMeta::class)->where('key', $key)->orderBy('created_at', 'DESC')->first()->value ?? '';
+        return $this->hasMany(FacebookPageMeta::class)->where('key', $key)->orderBy('created_at', 'DESC')->first()->value ?? 'N/A';
     }
 }

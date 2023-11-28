@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\FacebookPage;
+use App\Models\FacebookPageMeta;
+
 function get_page_info ($urls) {
     try {
         $curl = curl_init();
@@ -34,12 +37,36 @@ function get_page_info ($urls) {
         }
 
         curl_close($curl);
-        return $response;
+        return json_decode($response);
     } catch (\Exception $e) {
 //        trigger_error(sprintf(
 //            'Curl failed with error #%d: %s',
 //            $e->getCode(), $e->getMessage()),
 //            E_USER_ERROR);
         return [];
+    }
+}
+
+function store_fetched_page_info ($data) {
+    if (count($data) == 0) {
+        return false;
+    }
+
+    foreach ($data as $page) {
+        if (!$facebook_page = FacebookPage::where('url', $page->url)->first()) {
+            continue;
+        }
+
+        foreach ($page as $key => $value) {
+            if ($value == "") {
+                continue;
+            }
+
+            FacebookPageMeta::create([
+                'facebook_page_id' => $facebook_page->id,
+                'key' => $key,
+                'value' => $value,
+            ]);
+        }
     }
 }
