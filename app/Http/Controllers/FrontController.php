@@ -31,7 +31,7 @@ class FrontController extends Controller
 
         $response = get_page_info([$facebook_page->url]);
 
-        store_fetched_page_info($response);
+        store_fetched_page_info($response->data);
 
         return redirect()->route('facebookPages');
     }
