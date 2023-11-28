@@ -31,7 +31,6 @@ export const getInfo = async (urls) => {
 
     for (const url of urls) {
         await page.goto(url);
-        await page.locator('h1:first').wait()
         // await timeout(4000);
 
         results.push({
