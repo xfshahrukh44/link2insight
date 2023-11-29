@@ -32,7 +32,6 @@ export const getInfo = async (urls) => {
 
     for (const url of urls) {
         await page.goto(url);
-        await timeout(4000);
 
         results.push({
             url,
@@ -53,7 +52,7 @@ export const getInfo = async (urls) => {
 async function getName (page) {
     return page.evaluate(() => {
         const allH1Elements = Array.from(document.querySelectorAll('h1'))
-                                    .filter(h1 => h1.textContent.trim() !== 'Notifications');
+            .filter(h1 => h1.textContent.trim() !== 'Notifications');
 
         if (allH1Elements.length === 0) {
             return '';
