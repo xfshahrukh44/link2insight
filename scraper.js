@@ -9,7 +9,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // Define a route for the endpoint
-app.post('/', async (req, res) => {
+app.post('/', (req, res) => {
     console.log(req.body);
     // Check if the request body is an array of strings
     if (req.body && req.body.urls) {
@@ -17,7 +17,7 @@ app.post('/', async (req, res) => {
         const arrayOfStrings = req.body.urls;
         if (Array.isArray(arrayOfStrings) && arrayOfStrings.every(item => typeof item === 'string')) {
             try {
-                let results = await getInfo(req.body.urls);
+                let results = getInfo(req.body.urls);
                 res.json({ success: true, data: results });
             } catch (error) {
                 console.error('Error processing request:', error);
