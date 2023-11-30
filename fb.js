@@ -19,10 +19,10 @@ export const getInfo = async (urls) => {
     // });
     const page = await browser.newPage();
 
-    //minimize window
-    const session = await page.target().createCDPSession();
-    const {windowId} = await session.send('Browser.getWindowForTarget');
-    await session.send('Browser.setWindowBounds', {windowId, bounds: {windowState: 'minimized'}});
+    // //minimize window
+    // const session = await page.target().createCDPSession();
+    // const {windowId} = await session.send('Browser.getWindowForTarget');
+    // await session.send('Browser.setWindowBounds', {windowId, bounds: {windowState: 'minimized'}});
 
     let results = [];
 
