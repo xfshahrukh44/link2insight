@@ -10,8 +10,8 @@ export const getInfo = async (urls) => {
     // Launch the browser and open a new blank page
     const browser = await puppeteer.launch({
         headless: "new",
-        executablePath: path.join(__dirname, '../..', '/.cache/puppeteer/chrome/linux-119.0.6045.105/chrome-linux64/chrome'),
-        args: [ "--no-sandbox", "--disable-setuid-sandbox" ]
+        // executablePath: path.join(__dirname, '../..', '/.cache/puppeteer/chrome/linux-119.0.6045.105/chrome-linux64/chrome'),
+        // args: [ "--no-sandbox", "--disable-setuid-sandbox" ]
     });
     // const browser = await puppeteer.launch({
     //     headless: false,
@@ -35,6 +35,7 @@ export const getInfo = async (urls) => {
         })
 
         await timeout(10000);
+        await closePopup(page);
 
         let object = {
             url,
@@ -59,6 +60,22 @@ export const getInfo = async (urls) => {
 
     await browser.close();
     return results;
+}
+
+async function closePopup (page) {
+    return await page.evaluate(() => {
+        // Find the div with aria-label="Close"
+        const closeButton = document.querySelector('div[aria-label="Close"]');
+
+        // Check if the element is found
+        if (closeButton) {
+            // Click the element
+            closeButton.click();
+            console.log('Clicked the element with aria-label="Close"');
+        } else {
+            console.log('Element with aria-label="Close" not found');
+        }
+    });
 }
 
 async function getName (page) {
