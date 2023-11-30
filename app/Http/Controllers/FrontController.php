@@ -98,7 +98,7 @@ class FrontController extends Controller
             }
 
             $dummy = $response->data[0];
-            unset($dummy['url']);
+            unset($dummy->url);
 
             if ($dummy == []) {
                 DB::rollBack();

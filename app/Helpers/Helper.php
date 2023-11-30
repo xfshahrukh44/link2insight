@@ -59,7 +59,7 @@ function store_fetched_page_info ($data) {
         }
 
         $dummy = $page;
-        unset($dummy['url']);
+        unset($dummy->url);
 
         if ($dummy == []) {
             continue;
