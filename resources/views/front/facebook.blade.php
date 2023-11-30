@@ -27,11 +27,13 @@
 {{--                    Filters</button>--}}
 {{--            </div>--}}
             @if (count($facebook_pages) > 0 )
-                <div class="row smmProt-card mt-2 px-3">
-                    <a href="{{route('refreshData')}}" class="btn btn-success btn-block btn_refresh_data">
-                        <i class="fas fa-arrows-rotate mr-2"></i>Refresh Data
-                    </a>
-                </div>
+                <form action="{{route('refreshData')}}" method="GET" id="form_refresh_data">
+                    <div class="row smmProt-card mt-2 px-3">
+                        <button type="submit" class="btn btn-success btn-block btn_refresh_data">
+                            <i class="fas fa-arrows-rotate mr-2"></i>Refresh Data
+                        </button>
+                    </div>
+                </form>
             @endif
 
             <div class="row smmProt-card mt-2">
@@ -196,6 +198,8 @@
     <script>
         $(document).ready(function () {
             $('.btn_refresh_data').on('click', function () {
+                $(this).prop('disabled', true);
+                $('#form_refresh_data').submit();
                 // $('.btn_refresh_data').prop('href', "#");
             });
         });
