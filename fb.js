@@ -36,14 +36,23 @@ export const getInfo = async (urls) => {
 
         await timeout(10000);
 
-        results.push({
+        let object = {
             url,
             name: await getName(page),
             image: await getImage(page),
             followers: await getFollowers(page),
             likes: await getLikes(page),
             last_post_at: await getLastPostAt(page)
-        });
+        };
+
+        const keys = Object.keys(object);
+        for (const key of keys) {
+            if (object[key] === '') {
+                delete object[key];
+            }
+        }
+
+        results.push(object);
     }
 
     console.log(results);
