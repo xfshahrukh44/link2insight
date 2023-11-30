@@ -11,11 +11,7 @@ export const getInfo = async (urls) => {
     const browser = await puppeteer.launch({
         headless: "new",
         executablePath: path.join(__dirname, '../..', '/.cache/puppeteer/chrome/linux-119.0.6045.105/chrome-linux64/chrome'),
-        // executablePath: path.join(__dirname, '/puppeteer/chrome'),
-        // executablePath: '/puppeteer',
-        // executablePath: '~/puppeteer/chrome/linux-119.0.6045.105/chrome-linux64',
         args: [ "--no-sandbox", "--disable-setuid-sandbox" ]
-        // args: [ "--no-sandbox" ]
     });
     // const browser = await puppeteer.launch({
     //     headless: false,
@@ -32,6 +28,12 @@ export const getInfo = async (urls) => {
 
     for (const url of urls) {
         await page.goto(url);
+
+        await page.setViewport({
+            width: 2000,
+            height: 2000
+        })
+
         await timeout(10000);
 
         results.push({
