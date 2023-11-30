@@ -11,6 +11,9 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-v4-rtl/4.4.1-1/css/bootstrap.min.css"/> -->
     <link rel="stylesheet" href="{{asset('css/custom.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -25,22 +28,31 @@
                 <img src="{{asset('images/logo.webp')}}" alt="logo" class="imgFluid w-100 h-100 object-fit">
             </a>
             <ul class="header-main__nav">
+                {{--search--}}
+{{--                <li>--}}
+{{--                    <form action="">--}}
+{{--                        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>--}}
+{{--                        <input type="text">--}}
+{{--                    </form>--}}
+{{--                </li>--}}
+                {{--notification button--}}
+{{--                <li>--}}
+{{--                    <button class="notificationBtn">--}}
+{{--                        <i class="fa-regular fa-bell bell"></i>--}}
+{{--                    </button>--}}
+{{--                </li>--}}
+{{--                <li>--}}
+{{--                    <div class="userProfile">--}}
+{{--                        <a href="" class="d-block"><img src="{{asset('images/user.webp')}}" alt="user"--}}
+{{--                                                        class="img-fluid w-100 object-fit"></a>--}}
+{{--                    </div>--}}
+{{--                </li>--}}
                 <li>
-                    <form action="">
-                        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                        <input type="text">
+                    <a onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
                     </form>
-                </li>
-                <li>
-                    <button class="notificationBtn">
-                        <i class="fa-regular fa-bell bell"></i>
-                    </button>
-                </li>
-                <li>
-                    <div class="userProfile">
-                        <a href="" class="d-block"><img src="{{asset('images/user.webp')}}" alt="user"
-                                                        class="img-fluid w-100 object-fit"></a>
-                    </div>
                 </li>
             </ul>
         </div>
@@ -218,31 +230,32 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-lg-12">
-                        <form action="" class="userForm">
+                        <form action="{{route('createUser')}}" class="userForm" method="POST">
+                            @csrf
                             <h4 class="text-center">Add User Details</h4>
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="inputField">
                                         <label for="">Name</label>
-                                        <input type="text">
+                                        <input name="name" type="text" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="inputField">
                                         <label for="">Username</label>
-                                        <input type="text">
+                                        <input name="username" type="text" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="inputField">
                                         <label for="">Email</label>
-                                        <input type="email">
+                                        <input name="email" type="email" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="inputField">
                                         <label for="">Password</label>
-                                        <input type="password" placeholder="6+ characters">
+                                        <input type="password" name="password" placeholder="6+ characters" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
@@ -396,6 +409,11 @@
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
 <script src="{{asset('js/custom.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+@yield('scripts')
 
 </body>
 

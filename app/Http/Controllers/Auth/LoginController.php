@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
@@ -36,5 +38,35 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function appLogin (Request $request)
+    {
+//        $this->login();
+        return view('front.auth.login');
+    }
+
+    public function login(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'username' => 'required|string',
+            'password' => 'required|string',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->route('app_login')->with('errors', $validator->errors()->all());
+        }
+
+
+        if($this->guard()->attempt(
+            [
+                'username' => $request->username,
+                'password' => $request->password
+            ], true
+        )) {
+            return redirect()->route('facebookPages')->with('success', 'Welcome.');
+        } else {
+            return redirect()->route('app_login')->with('errors', ['Invalid Username/Password.']);
+        }
     }
 }

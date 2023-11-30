@@ -33,7 +33,8 @@ function get_page_info ($urls) {
 
         // Check the return value of curl_exec(), too
         if ($response === false) {
-            throw new Exception(curl_error($curl), curl_errno($curl));
+            return [];
+//            throw new Exception(curl_error($curl), curl_errno($curl));
         }
 
         curl_close($curl);

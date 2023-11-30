@@ -127,8 +127,11 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="inputField">
-                                            <label for="">Username or Email</label>
-                                            <input name="email" tabindex="1" type="text" autofocus required>
+                                            <label for="">Username</label>
+                                            <input name="username" tabindex="1" type="text" autofocus required>
+{{--                                            @error('username')--}}
+{{--                                                <span class="text-danger">{{$message}}</span>--}}
+{{--                                            @enderror--}}
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
@@ -136,9 +139,21 @@
                                             <label for="">Password
 {{--                                                <span><a href="">forgot?</a></span>--}}
                                             </label>
-                                            <input name="password" type="password" required>
+                                            <input name="password" tabindex="2" type="password" required>
                                         </div>
                                     </div>
+                                    {{--errors--}}
+                                    @if(session()->has('errors'))
+                                        <div class="col-lg-12">
+                                            <ol class="text-center" style="list-style-type: unset !important;">
+                                                @foreach(session()->get('errors') as $error)
+                                                    <li>
+                                                        <small class="text-danger">{{$error}}</small>
+                                                    </li>
+                                                @endforeach
+                                            </ol>
+                                        </div>
+                                    @endif
                                     <div class="col-lg-12">
                                         <div class="inputField-btn mb-4">
                                             <button type="submit">Sign In</button>
@@ -150,7 +165,8 @@
                         </div>
                     </div>
                     <div class="signIn-form">
-                        <form action="" class="userForm">
+                        <form action="{{route('login')}}" class="userForm" method="POST">
+                            @csrf
                             <h4 class="text-center">Sign Up to Oilve Digitals</h4>
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6">
