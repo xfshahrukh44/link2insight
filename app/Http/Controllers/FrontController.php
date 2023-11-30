@@ -49,9 +49,17 @@ class FrontController extends Controller
             }
 
             $response = get_page_info([$facebook_page->url]);
-            if ($response == [] || !$response->data) {
+            if ($response == [] || !$response->data || !$response->data[0]) {
                 DB::rollBack();
                 return redirect()->route('facebookPages')->with('error', "Couldn't add page.");
+            }
+
+            $dummy = $response->data[0];
+            unset($dummy->url);
+
+            if ($dummy == []) {
+                DB::rollBack();
+                return redirect()->route('facebookPages')->with('error', "Couldn't refresh data.");
             }
 
             store_fetched_page_info($response->data);
@@ -92,15 +100,7 @@ class FrontController extends Controller
             $urls = FacebookPage::query()->pluck('url')->toArray();
 
             $response = get_page_info($urls);
-            if ($response == [] || !$response->data || !$response->data[0]) {
-                DB::rollBack();
-                return redirect()->route('facebookPages')->with('error', "Couldn't refresh data.");
-            }
-
-            $dummy = $response->data[0];
-            unset($dummy->url);
-
-            if ($dummy == []) {
+            if ($response == [] || !$response->data) {
                 DB::rollBack();
                 return redirect()->route('facebookPages')->with('error', "Couldn't refresh data.");
             }
