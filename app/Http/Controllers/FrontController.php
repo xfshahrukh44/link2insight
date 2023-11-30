@@ -92,7 +92,15 @@ class FrontController extends Controller
             $urls = FacebookPage::query()->pluck('url')->toArray();
 
             $response = get_page_info($urls);
-            if ($response == [] || !$response->data) {
+            if ($response == [] || !$response->data || !$response->data[0]) {
+                DB::rollBack();
+                return redirect()->route('facebookPages')->with('error', "Couldn't refresh data.");
+            }
+
+            $dummy = $response->data[0];
+            unset($dummy['url']);
+
+            if ($dummy == []) {
                 DB::rollBack();
                 return redirect()->route('facebookPages')->with('error', "Couldn't refresh data.");
             }

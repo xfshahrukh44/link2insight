@@ -58,8 +58,16 @@ function store_fetched_page_info ($data) {
             continue;
         }
 
+        $dummy = $page;
+        unset($dummy['url']);
+
+        if ($dummy == []) {
+            continue;
+        }
+
         foreach ($page as $key => $value) {
-            if ($key == "url" || $value == "") {
+//            if ($key == "url" || $value == "") {
+            if ($key == "url") {
                 continue;
             }
 
