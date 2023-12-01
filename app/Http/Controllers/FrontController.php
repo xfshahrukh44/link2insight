@@ -57,7 +57,7 @@ class FrontController extends Controller
             $dummy = clone $response->data[0];
             unset($dummy->url);
 
-            if ($dummy == []) {
+            if ($dummy == [] || json_encode($dummy) == '{}') {
                 DB::rollBack();
                 return redirect()->route('facebookPages')->with('error', "Couldn't refresh data.");
             }
