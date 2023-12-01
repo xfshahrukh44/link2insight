@@ -49,12 +49,12 @@ class FrontController extends Controller
             }
 
             $response = get_page_info([$facebook_page->url]);
-            if ($response == [] || !$response->data || !$response->data[0]) {
+            if ($response == [] || !isset($response->data) || !isset($response->data[0])) {
                 DB::rollBack();
                 return redirect()->route('facebookPages')->with('error', "Couldn't add page.");
             }
 
-            $dummy = $response->data[0];
+            $dummy = clone $response->data[0];
             unset($dummy->url);
 
             if ($dummy == []) {

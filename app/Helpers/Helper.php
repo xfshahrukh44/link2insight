@@ -58,7 +58,7 @@ function store_fetched_page_info ($data) {
             continue;
         }
 
-        $dummy = $page;
+        $dummy = clone $page;
         unset($dummy->url);
 
         if ($dummy == []) {
