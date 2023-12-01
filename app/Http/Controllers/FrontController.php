@@ -59,7 +59,7 @@ class FrontController extends Controller
 
             if ($dummy == [] || json_encode($dummy) == '{}') {
                 DB::rollBack();
-                return redirect()->route('facebookPages')->with('error', "Couldn't refresh data.");
+                return redirect()->route('facebookPages')->with('error', "Couldn't add page.");
             }
 
             store_fetched_page_info($response->data);
