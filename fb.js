@@ -34,7 +34,7 @@ export const getInfo = async (urls) => {
             height: 2000
         })
 
-        await timeout(10000);
+        await timeout(20000);
         await closePopup(page);
 
         let object = {
